@@ -1,0 +1,43 @@
+{
+    "name": "get next tx batch",
+    "steps": [
+        {
+            "step": "externalSteps",
+            "path": "create_another_tx_ok.scen.json"
+        },
+        {
+            "step": "setState",
+            "currentBlockInfo": {
+                "blockNonce": "500"
+            }
+        },
+        {
+            "step": "scQuery",
+            "txId": "get-current-tx-batch",
+            "tx": {
+                "to": "sc:esdt_safe",
+                "function": "getCurrentTxBatch",
+                "arguments": []
+            },
+            "expect": {
+                "out": [
+                    "1",
+
+                    "0",
+                    "1",
+                    "address:user1",
+                    "0x0102030405060708091011121314151617181920",
+                    "str:BRIDGE-123456",
+                    "400",
+
+                    "0",
+                    "2",
+                    "address:user2",
+                    "0x0102030405060708091011121314151617181920",
+                    "str:BRIDGE-123456",
+                    "900"
+                ]
+            }
+        }
+    ]
+}

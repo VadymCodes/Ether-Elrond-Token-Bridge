@@ -1,0 +1,14 @@
+[package]
+name = "transaction"
+version = "0.0.0"
+authors = [ "dorin-iancu <dorin.iancu@elrond.com>",]
+edition = "2018"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies.eth-address]
+path = "../eth-address"
+
+[dependencies.elrond-wasm]
+version = "0.31.0"
